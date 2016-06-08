@@ -507,6 +507,22 @@ void QXYSeries::append(const QList<QPointF> &points)
 }
 
 /*!
+   Adds list of data \a points to the series.
+ */
+void QXYSeries::appendList(const QList<QPointF> &points)
+{
+    Q_D(QXYSeries);
+    foreach (const QPointF &point , points){
+        if (isValidValue(point)) {
+            d->m_points << point;
+        }
+    }
+    emit pointAdded(d->m_points.count() - 1);
+
+}
+
+
+/*!
   Replaces data point (\a oldX, \a oldY) with data point (\a newX, \a newY).
   \sa pointReplaced()
 */

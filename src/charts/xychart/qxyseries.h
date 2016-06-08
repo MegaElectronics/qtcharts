@@ -63,6 +63,7 @@ public:
     void append(qreal x, qreal y);
     void append(const QPointF &point);
     void append(const QList<QPointF> &points);
+    void appendList(const QList<QPointF> &points);
     void replace(qreal oldX, qreal oldY, qreal newX, qreal newY);
     void replace(const QPointF &oldPoint, const QPointF &newPoint);
     void replace(int index, qreal newX, qreal newY);
